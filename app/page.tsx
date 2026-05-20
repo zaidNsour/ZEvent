@@ -23,6 +23,7 @@ import { events } from "@/lib/constants";
 
 
 export default function Home() {
+
   return (
    <section>
     <h1 className="text-center">The Hub For Every Events <br/> You Can't Miss</h1>
