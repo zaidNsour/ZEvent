@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import posthog from "posthog-js";
 
 function NavBar() {
   return ( 
@@ -13,9 +14,9 @@ function NavBar() {
         </Link>
 
         <ul>
-          <Link href='/' className="home">Home</Link>
-          <Link href='/' className="home">Event</Link>
-          <Link href='/' className="home">Create Event</Link>
+          <Link href='/' className="home" onClick={() => posthog.capture("nav_link_clicked", { label: "Home" })}>Home</Link>
+          <Link href='/' className="home" onClick={() => posthog.capture("nav_link_clicked", { label: "Event" })}>Event</Link>
+          <Link href='/' className="home" onClick={() => posthog.capture("nav_link_clicked", { label: "Create Event" })}>Create Event</Link>
         </ul>
       </nav>
     </header>
